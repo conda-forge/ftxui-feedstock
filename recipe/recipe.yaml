@@ -1,5 +1,5 @@
 context:
-  version: "6.1.9"
+  version: "7.0.0"
 
 package:
   name: ftxui
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ArthurSonzogni/FTXUI/releases/download/v${{ version }}/source.tar.gz
-  sha256: 868670e451c38bdc3ad23d086796543cde4a845fd0420148b198dff5cbe08285
+  sha256: 0304979fe680ca07f8621d68605d71ea507bfb988398fca0e5c0ae57cad19638
 
 build:
   number: 0
@@ -36,7 +36,7 @@ tests:
         - ftxui-dom
         - ftxui-screen
   - script:
-    - cmake-package-check ftxui --targets ftxui::dom ftxui::component ftxui::screen
+      - cmake-package-check ftxui --targets ftxui::dom ftxui::component ftxui::screen
     requirements:
       run:
         - ${{ compiler('c') }}
