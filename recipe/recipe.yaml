@@ -19,13 +19,8 @@ requirements:
     - ${{ stdlib("c") }}
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
-  # We pin downstream consumers to the full patch version for now
-  # because FTXUI 6.x does not yet provide ABI guarantees.
-  # Once upstream introduces an SOVERSION/ABI policy (planned for 7.0.0), this can be relaxed to a
-  # looser `upper_bound` tied to the SOVERSION.
-  # See discussion: https://github.com/ArthurSonzogni/FTXUI/discussions/1249
   run_exports:
-    - ${{ pin_subpackage("ftxui", upper_bound="x.x.x") }}
+    - ${{ pin_subpackage("ftxui", upper_bound="x") }}
 
 tests:
   - package_contents:
